@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 3,
+  "taskId": "task-twin-example",
+  "sessionId": "session-twin-example",
+  "objective": "현재 저장된 근거만 사용해 사용자의 문서 작성 선호를 요약하고 불확실한 항목을 구분해라.",
+  "context": {"memoryScope": "user:example"},
+  "history": [],
+  "approvals": []
+}

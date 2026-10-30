@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 5,
+  "profile": "developer",
+  "workflow": "prototyper",
+  "skills": [
+    "developer/prototyper"
+  ],
+  "tools": [
+    "git_status",
+    "inspect_diff",
+    "read_file",
+    "repo_map",
+    "replace_text",
+    "request_input",
+    "run_check",
+    "search_code",
+    "write_file"
+  ],
+  "memory": "session",
+  "review": "none",
+  "effects": "rax",
+  "effectApproval": "plan_only",
+  "isolation": {
+    "kind": "native"
+  },
+  "extensions": []
+}

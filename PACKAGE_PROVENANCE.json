@@ -1,0 +1,40 @@
+{
+  "schema": "upagent.package-provenance/1",
+  "createdDate": "2026-09-13",
+  "inputs": [
+    {
+      "name": "upagent-perfectpixel-source-2026-09-13.tar(1).gz",
+      "sha256": "d84e265a958c85f1cf910121443374ba1def7fec7913fef587d17de5346430ce",
+      "role": "canonical UpAgent baseline source"
+    },
+    {
+      "name": "upagent(5).zip",
+      "sha256": "c3d88710958562bb9f34935909cc9045e54f7886b61cfe0f0370eb7e133a62dd",
+      "role": "PerfectPixel + Vergerail donor source"
+    },
+    {
+      "name": "promptGen(20260913-092415).zip",
+      "sha256": "4e8609a41ea15ca6dd10e46bb292beb0d163c9ef0b8c77c9cd3b3ac804e1e9c3",
+      "role": "canonical promptGen replacement source"
+    },
+    {
+      "name": "Agent-Native-Tool-Design(6).md",
+      "sha256": "fad877b6bda9c32e6245b90e104de07ea84ccf8d5cb3ba02db898253b7d4cb79",
+      "role": "design constraints"
+    }
+  ],
+  "runtimeVerification": "SOURCE_BUILD_AND_LOCAL_GATES_PASS",
+  "runtimeVerificationReason": "Four-workspace release build, shared CLI contract audit, real UpAgent-to-PerfectPixel PNG inspection and all 12 exact compare assertions passed on macOS arm64. Historical live-provider evidence is recorded separately; no new external provider effect was run for this release.",
+  "staticVerification": "PASS",
+  "releaseClaim": "Public source and macOS arm64 CLI distribution; source identity and archive checksums are provided. Developer ID notarization is not claimed.",
+  "sourcePackageReady": true,
+  "binaryReleaseQualified": true,
+  "binaryReleaseQualificationReason": "Local macOS arm64 release binaries passed identity, protocol, focused runtime, extracted-package content/mode/signature and CLI smoke checks. This qualification does not attest a new live-provider run or Developer ID notarization.",
+  "distribution": {
+    "repository": "https://github.com/axiom-orient/upagent-system",
+    "releaseTag": "v0.1.0",
+    "binaryTarget": "aarch64-apple-darwin",
+    "codeSigning": "ad-hoc; strict verification passed",
+    "notarization": "NOT_RUN"
+  }
+}

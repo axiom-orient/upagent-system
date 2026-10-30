@@ -1,0 +1,26 @@
+{
+  "schema": "perfectpixel.package-provenance/2",
+  "updatedDate": "2026-09-13",
+  "role": "embedded deterministic image mechanism for UpAgent",
+  "origin": {
+    "donorArchive": "upagent(5).zip",
+    "donorArchiveSha256": "c3d88710958562bb9f34935909cc9045e54f7886b61cfe0f0370eb7e133a62dd",
+    "upstreamReferenceRepository": "https://github.com/AxiomOrient/perfectpixel.git",
+    "upstreamReferenceCommit": "6126f94035206b64ee04fe06afb75cd6836861d2"
+  },
+  "integrationChanges": [
+    "restore canonical render.text_node capability and font-byte-bound renderer",
+    "restore canonical compare.exact_spec capability",
+    "use agent-render raster operations as the single agent deterministic edit surface",
+    "align render node kind/z wire semantics with the pinned upstream contract",
+    "emit typed text layout evidence while keeping fonts as caller-supplied artifacts",
+    "keep standalone deterministic edit CLI while removing duplicate agent edit capability"
+  ],
+  "verification": {
+    "staticContract": "PASS",
+    "rustBuildTestClippy": "NOT_RUN",
+    "reason": "cargo/rustc unavailable in the current environment"
+  },
+  "sourcePackageReady": true,
+  "binaryReleaseQualified": false
+}

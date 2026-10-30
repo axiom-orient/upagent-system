@@ -1,0 +1,8 @@
+{
+  "schema": "perfectpixel.vector-policy/1",
+  "version": "docs-example/1",
+  "allowedPalette": ["#111827", "#38BDF8", "#F8FAFC"],
+  "requiredPalette": ["#111827"],
+  "rejectUnmapped": true,
+  "allowDropNoise": false
+}

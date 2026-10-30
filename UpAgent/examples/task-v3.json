@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 3,
+  "taskId": "task-v3-example",
+  "sessionId": "session-v3-example",
+  "objective": "Describe the selected agent composition.",
+  "history": [],
+  "context": {},
+  "approvals": []
+}

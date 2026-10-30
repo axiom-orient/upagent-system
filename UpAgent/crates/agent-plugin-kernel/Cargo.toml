@@ -1,0 +1,14 @@
+[package]
+name = "agent-plugin-kernel"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "Deterministic typed plugin graph contracts for UpAgent"
+
+[dependencies]
+sha2.workspace = true
+
+[lints]
+workspace = true
+

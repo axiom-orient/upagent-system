@@ -1,0 +1,20 @@
+[
+  {
+    "schemaVersion": 3,
+    "taskId": "task-batch-a",
+    "sessionId": "session-batch",
+    "objective": "문장 '상태와 부수효과를 분리한다'를 한 문단으로 설명해라.",
+    "history": [],
+    "context": {},
+    "approvals": []
+  },
+  {
+    "schemaVersion": 3,
+    "taskId": "task-batch-b",
+    "sessionId": "session-batch",
+    "objective": "문장 '실패를 성공으로 숨기지 않는다'를 한 문단으로 설명해라.",
+    "history": [],
+    "context": {},
+    "approvals": []
+  }
+]

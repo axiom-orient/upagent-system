@@ -1,0 +1,16 @@
+[package]
+name = "agent-profiles"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+agent-core = { path = "../agent-core" }
+agent-plugin-kernel = { path = "../agent-plugin-kernel" }
+agent-profile-api = { path = "../agent-profile-api" }
+agent-skills = { path = "../agent-skills" }
+serde_json.workspace = true
+
+[lints]
+workspace = true

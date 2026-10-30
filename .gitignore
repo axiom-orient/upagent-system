@@ -1,0 +1,14 @@
+/.build-target/
+/dist/
+**/target/
+__pycache__/
+*.py[cod]
+.DS_Store
+__MACOSX/
+.env
+.env.*
+!.env.example
+auth.json
+*.pem
+*.key
+*.p12

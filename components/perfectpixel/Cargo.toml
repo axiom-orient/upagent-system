@@ -1,0 +1,41 @@
+[package]
+name = "perfectpixel"
+version = "0.3.1"
+edition = "2021"
+rust-version = "1.97"
+license = "MIT"
+description = "Deterministic local raster, sprite, vector, and motion asset compiler."
+repository = "https://github.com/AxiomOrient/perfectpixel"
+homepage = "https://github.com/AxiomOrient/perfectpixel"
+documentation = "https://docs.rs/perfectpixel"
+readme = "README.md"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "perfectpixel"
+path = "src/bin/perfectpixel.rs"
+
+[[bin]]
+name = "perfectpixel-mcp"
+path = "src/bin/perfectpixel-mcp.rs"
+
+[dependencies]
+binpack2d = "=1.0.1"
+fast_image_resize = "=6.1.0"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "webp"] }
+libc = "0.2"
+resvg = { version = "0.47", default-features = false }
+rmcp = { version = "=3.1.4", default-features = false, features = ["server", "macros", "transport-io"] }
+roxmltree = "=0.21.1"
+schemars = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "=0.10.9"
+rustybuzz = "=0.20.1"
+ttf-parser = "=0.25.1"
+unicode-script = "=0.5.8"
+svgtypes = "=0.16.1"
+thiserror = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "sync"] }

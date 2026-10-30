@@ -1,0 +1,115 @@
+#!/bin/sh
+set -eu
+
+mode=${1:-}
+case "$mode" in
+    "") release=0 ;;
+    --release) release=1 ;;
+    *) echo "usage: scripts/verify.sh [--release]" >&2; exit 2 ;;
+esac
+
+repository_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+cd "$repository_root"
+
+if [ -e .github/workflows ]; then
+    echo "GitHub Actions are prohibited: remove .github/workflows" >&2
+    exit 1
+fi
+
+if grep -R -n -E 'VERGERAIL_HOME_OWNER|with_home_owner|ManagedHome' \
+    src examples tests docs README.md SECURITY.md; then
+    echo "retired dedicated-home surface detected" >&2
+    exit 1
+fi
+
+if grep -R -n -E 'VERGERAIL_CODEX_HOME|with_codex_home|managed_home|managedHome' \
+    src examples docs README.md SECURITY.md; then
+    echo "retired dedicated-home surface detected" >&2
+    exit 1
+fi
+
+if grep -n -E 'VERGERAIL_GUARDIAN_LEGACY_MUTANT|survivor-probe|first-empty-scan' \
+    src/native/vergerail_guardian.c; then
+    echo "test mutation surface leaked into production guardian" >&2
+    exit 1
+fi
+
+if [ "$release" -eq 1 ]; then
+    if [ -n "${VERGERAIL_IMAGE_ONLY:-}" ]; then
+        echo "release verification forbids VERGERAIL_IMAGE_ONLY" >&2
+        exit 1
+    fi
+    if ! git rev-parse --verify HEAD >/dev/null 2>&1; then
+        echo "release verification requires a committed HEAD" >&2
+        exit 1
+    fi
+    if [ -n "$(git status --porcelain=v1)" ]; then
+        echo "release verification requires a clean checkout" >&2
+        git status --short >&2
+        exit 1
+    fi
+    if [ "$(uname -s)" != "Darwin" ] || [ "$(uname -m)" != "arm64" ]; then
+        echo "release external proof requires aarch64 macOS" >&2
+        exit 1
+    fi
+    if [ -z "${VERGERAIL_CODEX_PACKAGE:-}" ] || [ ! -d "${VERGERAIL_CODEX_PACKAGE:-}" ]; then
+        echo "release external proof requires VERGERAIL_CODEX_PACKAGE" >&2
+        exit 1
+    fi
+    if [ -z "${VERGERAIL_MODEL:-}" ]; then
+        echo "release external proof requires VERGERAIL_MODEL" >&2
+        exit 1
+    fi
+    if [ -z "${VERGERAIL_WORKSPACE:-}" ] || [ ! -d "${VERGERAIL_WORKSPACE:-}" ]; then
+        echo "release external proof requires an existing VERGERAIL_WORKSPACE" >&2
+        exit 1
+    fi
+    if [ -z "${VERGERAIL_PERFECTPIXEL_BIN:-}" ] || [ ! -f "${VERGERAIL_PERFECTPIXEL_BIN:-}" ]; then
+        echo "release external proof requires an existing VERGERAIL_PERFECTPIXEL_BIN" >&2
+        exit 1
+    fi
+fi
+
+cargo fmt --all -- --check
+cargo check --offline --locked --all-targets
+# Guardian-backed contract tests start real macOS process boundaries. Keep the
+# test harness serial so the 500 ms request-timeout fixtures measure protocol
+# behavior rather than competing with another real process boundary.
+cargo test --offline --locked --all-targets -- --test-threads=1
+cargo test --offline --locked --doc
+cargo clippy --offline --locked --all-targets -- -D warnings
+RUSTDOCFLAGS='-D warnings' cargo doc --offline --locked --no-deps
+cargo deny check
+(cd protocol/codex-0.150.1 && shasum -a 256 -c SHA256SUMS)
+# Source distribution resolves the shared contract from the pinned sibling
+# PromptGen tree. Cargo normalizes path dependencies to registry dependencies in
+# .crate files; explicitly retain the same source during package verification.
+contract_root=$(CDPATH= cd -- "$repository_root/../../../promptGen/crates/agent-contract" && pwd)
+contract_patch="patch.crates-io.agent-contract.path=\"$contract_root\""
+if [ "$release" -eq 1 ]; then
+    package_listing=$(cargo --config "$contract_patch" package --offline --locked --list)
+else
+    package_listing=$(cargo --config "$contract_patch" package --offline --locked --allow-dirty --list)
+fi
+if printf '%s\n' "$package_listing" | grep -Eq '(^|/)(\.DS_Store|__MACOSX)(/|$)'; then
+    echo "platform metadata is present in the source package" >&2
+    exit 1
+fi
+if ! printf '%s\n' "$package_listing" | grep -Fq 'tests/fixtures/guardian_survivor_mutant.c'; then
+    echo "guardian survivor fixture is missing from the canonical package listing" >&2
+    exit 1
+fi
+if [ "$release" -eq 1 ]; then
+    cargo --config "$contract_patch" package --offline --locked
+else
+    cargo --config "$contract_patch" package --offline --locked --allow-dirty
+fi
+
+if [ -n "${VERGERAIL_CODEX_PACKAGE:-}" ]; then
+    cargo test --offline --locked --test official_runtime -- --ignored --nocapture
+fi
+
+if [ "$release" -eq 1 ]; then
+    cargo test --offline --locked --test managed_runtime -- --ignored --nocapture
+    cargo run --offline --locked --example live_e2e
+fi

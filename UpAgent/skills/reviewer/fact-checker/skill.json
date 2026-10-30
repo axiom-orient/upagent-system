@@ -1,0 +1,6 @@
+{
+  "id": "reviewer/fact-checker",
+  "version": "1",
+  "description": "Independent evidence check of frozen candidate findings.",
+  "profiles": ["reviewer"]
+}

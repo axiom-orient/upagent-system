@@ -1,0 +1,1 @@
+{"id":"twin/conversation","version":"1.0.0","description":"Conversation grounded in scoped, provenance-bearing memory","profiles":["twin"],"requiredCapabilities":["memory/read"]}

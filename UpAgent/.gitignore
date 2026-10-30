@@ -1,0 +1,10 @@
+/target/
+/.agent/
+__pycache__/
+*.pyc
+*.zip
+*.tmp
+*.lock.tmp
+*.swp
+*~
+.DS_Store

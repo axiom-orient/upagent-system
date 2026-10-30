@@ -1,0 +1,9 @@
+/target
+/.claude/
+/.gjc/
+/.toolchains/
+/local-verification-evidence/
+/verification-evidence/
+__pycache__/
+*.py[cod]
+.DS_Store

@@ -1,0 +1,34 @@
+{
+  "$id": "https://axd.local/schemas/approval.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "approved": {
+      "type": "boolean"
+    },
+    "approved_at": {
+      "type": "string"
+    },
+    "approver": {
+      "type": "string"
+    },
+    "handoff_digest": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "note": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "approved",
+    "approver",
+    "approved_at",
+    "handoff_digest"
+  ],
+  "title": "AXDev Handoff Approval",
+  "type": "object"
+}

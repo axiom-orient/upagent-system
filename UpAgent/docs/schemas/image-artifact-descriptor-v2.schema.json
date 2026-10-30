@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://upagent.local/schemas/image-artifact-descriptor-v2.schema.json",
+  "title": "UpAgent image artifact descriptor v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocolVersion", "artifact", "kind", "dependencyClosureSha256", "retention"],
+  "properties": {
+    "protocolVersion": {"const": "2.0.0"},
+    "artifact": {"$ref": "#/$defs/artifactRef"},
+    "kind": {"enum": ["working_raster", "export_raster", "mask", "object", "json", "receipt"]},
+    "pixelSpec": {"$ref": "#/$defs/pixelSpec"},
+    "dependencies": {"type": "array", "maxItems": 64, "items": {"$ref": "#/$defs/dependency"}},
+    "dependencyClosureSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "retention": {"enum": ["task_scoped", "cacheable", "pinned"]}
+  },
+  "$defs": {
+    "artifactRef": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "sha256", "mediaType", "byteLength", "relativePath"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "mediaType": {"type": "string", "minLength": 1},
+        "byteLength": {"type": "integer", "minimum": 1},
+        "relativePath": {"type": "string", "minLength": 1}
+      }
+    },
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sha256", "mediaType", "byteLength"],
+      "properties": {
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "mediaType": {"type": "string", "minLength": 1},
+        "byteLength": {"type": "integer", "minimum": 1}
+      }
+    },
+    "pixelSpec": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "colorSpace", "alphaMode"],
+      "properties": {
+        "format": {"const": "rgba8"},
+        "colorSpace": {"const": "srgb"},
+        "alphaMode": {"enum": ["straight", "premultiplied", "opaque"]}
+      }
+    }
+  }
+}

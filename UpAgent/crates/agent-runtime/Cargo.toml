@@ -1,0 +1,40 @@
+[package]
+name = "agent-runtime"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[features]
+default = []
+test-support = []
+
+[dependencies]
+agent-contract = { version = "0.1.0", path = "../../../../promptGen/crates/agent-contract", features = ["serde"] }
+async-trait.workspace = true
+agent-core = { path = "../agent-core" }
+agent-effects = { path = "../agent-effects" }
+agent-memory = { path = "../agent-memory" }
+agent-plugin-kernel = { path = "../agent-plugin-kernel" }
+agent-profile-api = { path = "../agent-profile-api" }
+agent-provider-api = { path = "../agent-provider-api" }
+agent-skills = { path = "../agent-skills" }
+fs2.workspace = true
+futures-util.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+rustix.workspace = true
+thiserror.workspace = true
+time.workspace = true
+tokio.workspace = true
+tokio-util.workspace = true
+tempfile.workspace = true
+uuid.workspace = true
+
+[dev-dependencies]
+async-trait.workspace = true
+agent-profiles = { path = "../agent-profiles" }
+
+[lints]
+workspace = true

@@ -1,0 +1,34 @@
+{
+  "$id": "https://axd.local/schemas/compilation-result.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "properties": {
+        "status": {
+          "const": "needs_clarification"
+        }
+      },
+      "required": [
+        "status",
+        "schema_version",
+        "request",
+        "questions"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "status": {
+          "const": "ready_for_approval"
+        }
+      },
+      "required": [
+        "status",
+        "schema_version",
+        "handoff"
+      ],
+      "type": "object"
+    }
+  ],
+  "title": "AXDev Intake Compilation Result"
+}

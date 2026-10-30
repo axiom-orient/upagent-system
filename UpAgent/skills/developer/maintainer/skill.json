@@ -1,0 +1,1 @@
+{"id":"developer/maintainer","version":"1.0.0","description":"Root-cause repair with recovery and regression protection","profiles":["developer"],"requiredCapabilities":["repo/read","repo/write","process/run","git/read"]}

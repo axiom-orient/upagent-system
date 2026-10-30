@@ -1,0 +1,20 @@
+{
+  "preset": "pixel-art",
+  "profile": "compact",
+  "detail": 5,
+  "minimumQuality": 0.995,
+  "maximumQualityLoss": 0.005,
+  "maximumPaths": 64,
+  "policy": {
+    "schema": "perfectpixel.vector-policy/1",
+    "version": "docs-example/1",
+    "allowedPalette": [],
+    "requiredPalette": [],
+    "rejectUnmapped": false,
+    "allowDropNoise": false
+  },
+  "diagnostics": {
+    "requested": true,
+    "artifactKinds": ["candidate-svg", "render-back"]
+  }
+}

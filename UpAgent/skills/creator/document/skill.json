@@ -1,0 +1,1 @@
+{"id":"creator/document","version":"1.0.0","description":"Structured Markdown document drafting","profiles":["creator"],"requiredCapabilities":["artifact/write"]}

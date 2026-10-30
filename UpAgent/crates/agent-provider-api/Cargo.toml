@@ -1,0 +1,20 @@
+[package]
+name = "agent-provider-api"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+agent-contract = { version = "0.1.0", path = "../../../../promptGen/crates/agent-contract", features = ["serde"] }
+agent-core = { path = "../agent-core" }
+agent-plugin-kernel = { path = "../agent-plugin-kernel" }
+async-trait.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+tokio-util.workspace = true
+
+[lints]
+workspace = true

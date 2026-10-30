@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "upagent.schema-index/v1",
+  "frozenPreprocessorArchiveSha256": "c3a3083f507ff63f5494fed99ce6e2b529d2172a54db5b1e15829220d674aa65",
+  "schemas": [
+    {
+      "role": "agent",
+      "source": "UpAgent/contracts/axd-execution-contract.schema.json",
+      "file": "agent-axd-execution-contract.schema.json",
+      "sha256": "56fd501f8abb5a054de693a70c42256d8d8a1004f00aa6a7e4f54f9e6c92a6b0"
+    },
+    {
+      "role": "agent",
+      "source": "UpAgent/crates/axdev-intake/schemas/approval.schema.json",
+      "file": "approval.schema.json",
+      "sha256": "6333cc1b21ac08236388e066e1432968fe54d997e38cff3c2be3265bd1fc252d"
+    },
+    {
+      "role": "agent",
+      "source": "UpAgent/crates/axdev-intake/schemas/compilation-result.schema.json",
+      "file": "compilation-result.schema.json",
+      "sha256": "3394b479708a22424c67eea6985ab14dcd96993d80ef3eae3efe563527de7112"
+    },
+    {
+      "role": "agent",
+      "source": "UpAgent/crates/axdev-intake/schemas/intake-request.schema.json",
+      "file": "intake-request.schema.json",
+      "sha256": "4f383a68941a12f8029c4b367941f0c8f9dd4745db1217c87df126e1568a9241"
+    },
+    {
+      "role": "agent",
+      "source": "UpAgent/crates/axdev-intake/schemas/work-item-handoff.schema.json",
+      "file": "work-item-handoff.schema.json",
+      "sha256": "79218042a64b89bc6ea8c16500ee23d7f3567df8265b25cbead7856de3131c96"
+    },
+    {
+      "role": "front-interface",
+      "source": "AXDevSystem/schemas/axd-execution-contract.schema.json",
+      "file": "front-axd-execution-contract.schema.json",
+      "sha256": "56fd501f8abb5a054de693a70c42256d8d8a1004f00aa6a7e4f54f9e6c92a6b0"
+    },
+    {
+      "role": "front-interface",
+      "source": "AXDocs/schemas/axd-execution-contract.schema.json",
+      "file": "front-axd-execution-contract.schema.json",
+      "sha256": "56fd501f8abb5a054de693a70c42256d8d8a1004f00aa6a7e4f54f9e6c92a6b0"
+    }
+  ]
+}

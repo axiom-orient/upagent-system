@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://axd.local/schemas/axd-execution-contract.schema.json",
+  "title": "AXDExecutionContract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract_version","contract_id","source_bundle_hash","profile_key","objective","success_criteria","track","stage","scopes","execution_level","assurance","topology","max_workers","requested_capabilities","required_tools","required_checks","max_turns","max_tool_calls","approval_required","output_contract"],
+  "properties": {
+    "contract_version": {"const": "1.0.0"},
+    "contract_id": {"type": "string", "minLength": 1},
+    "source_bundle_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$", "description": "SHA-256 of the exact canonical AXDevSystem bundle file bytes"},
+    "profile_key": {"type": "string", "minLength": 1},
+    "objective": {"type": "string", "minLength": 1},
+    "success_criteria": {"type": "array", "items": {"type": "string"}},
+    "track": {"enum": ["prototyper","builder","sweeper","grower","maintainer"]},
+    "stage": {"pattern": "^G[0-9]+$"},
+    "scopes": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["app","web","server","agent"]}},
+    "execution_level": {"enum": ["direct","guided","grounded","verified"]},
+    "assurance": {"enum": ["focused","standard","thorough","critical"]},
+    "topology": {"enum": ["single","parallel_read"]},
+    "max_workers": {"type": "integer", "minimum": 1, "maximum": 3},
+    "requested_capabilities": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "required_tools": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "required_checks": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "max_turns": {"type": "integer", "minimum": 1},
+    "max_tool_calls": {"type": "integer", "minimum": 1},
+    "approval_required": {"type": "boolean"},
+    "output_contract": {"type": "string", "minLength": 1}
+  },
+  "allOf": [
+    {"if":{"properties":{"topology":{"const":"single"}}},"then":{"properties":{"max_workers":{"const":1}}}},
+    {"if":{"properties":{"topology":{"const":"parallel_read"}}},"then":{"properties":{"max_workers":{"minimum":2}}}},
+    {"if":{"properties":{"approval_required":{"const":true}}},"then":{"properties":{"execution_level":{"const":"verified"}}}}
+  ]
+}

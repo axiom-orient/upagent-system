@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 5,
+  "profile": "creator",
+  "skills": [
+    "creator/chat"
+  ],
+  "tools": [
+    "request_input"
+  ],
+  "memory": "none",
+  "review": "none",
+  "effects": "none",
+  "effectApproval": "deny",
+  "isolation": {
+    "kind": "native"
+  },
+  "extensions": []
+}

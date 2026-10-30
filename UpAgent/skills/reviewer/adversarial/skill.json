@@ -1,0 +1,6 @@
+{
+  "id": "reviewer/adversarial",
+  "version": "1",
+  "description": "Counterexample, abuse, boundary, and false-success review.",
+  "profiles": ["reviewer"]
+}

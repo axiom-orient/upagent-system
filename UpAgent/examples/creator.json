@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 3,
+  "taskId": "task-creator-example",
+  "sessionId": "session-creator-example",
+  "objective": "다음 메모를 핵심만 남긴 Markdown 결정 기록으로 정리해라: API는 JSON stdout을 유지하고 로그는 stderr로 분리한다.",
+  "history": [],
+  "context": {},
+  "approvals": []
+}

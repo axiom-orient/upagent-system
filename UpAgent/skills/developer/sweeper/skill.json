@@ -1,0 +1,1 @@
+{"id":"developer/sweeper","version":"1.0.0","description":"Behavior-preserving removal of proven repository waste","profiles":["developer"],"requiredCapabilities":["repo/read","repo/write","process/run","git/read"]}

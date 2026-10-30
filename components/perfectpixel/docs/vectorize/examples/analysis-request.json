@@ -1,0 +1,12 @@
+{
+  "preset": "auto",
+  "profile": "motion-structure-ready",
+  "policy": {
+    "schema": "perfectpixel.vector-policy/1",
+    "version": "docs-example/1",
+    "allowedPalette": [],
+    "requiredPalette": [],
+    "rejectUnmapped": false,
+    "allowDropNoise": false
+  }
+}

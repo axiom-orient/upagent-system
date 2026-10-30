@@ -1,0 +1,83 @@
+[workspace]
+members = [
+    "crates/agent-core",
+    "crates/agent-skills",
+    "crates/agent-memory",
+    "crates/agent-effects",
+    "crates/agent-provider-api",
+    "crates/agent-provider",
+    "crates/agent-profile-api",
+    "crates/agent-profiles",
+    "crates/agent-review",
+    "crates/agent-review-cli",
+    "crates/agent-runtime",
+    "crates/agent-cli",
+    "crates/rax-core",
+    "crates/rax-runtime",
+    "crates/agent-plugin-kernel",
+]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.97"
+license = "Apache-2.0"
+authors = ["Unified Profiled Agent contributors"]
+
+[workspace.dependencies]
+async-trait = "0.1"
+base64 = "0.22.1"
+bytes = "1"
+cap-std = "4.0.2"
+clap = { version = "4.5.32", features = ["derive", "env"] }
+directories = "6.0.0"
+fs2 = "0.4.3"
+futures-core = "0.3"
+futures-util = "0.3"
+globset = "0.4.16"
+http = "1"
+httpdate = "1"
+parking_lot = "0.12"
+percent-encoding = "2"
+regex = "1.11.1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls", "stream"] }
+rustix = { version = "1.1.4", features = ["fs", "process"] }
+schemars = { version = "0.8.22", features = ["uuid1"] }
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
+sha2 = "0.10.8"
+tempfile = "3.19.1"
+thiserror = "2.0.12"
+time = { version = "0.3.41", features = ["formatting", "parsing", "serde", "macros"] }
+tokio = { version = "1", features = ["fs", "io-std", "io-util", "macros", "net", "process", "rt-multi-thread", "signal", "sync", "time"] }
+tokio-util = { version = "0.7", features = ["codec", "rt"] }
+url = { version = "2.5", features = ["serde"] }
+uuid = { version = "1.16.0", features = ["serde", "v4", "v7"] }
+which = "8.0.0"
+zeroize = { version = "1", features = ["derive"] }
+
+[workspace.lints.rust]
+unsafe_code = "deny"
+missing_debug_implementations = "warn"
+unused_must_use = "deny"
+
+[workspace.lints.clippy]
+correctness = { level = "deny", priority = -1 }
+suspicious = { level = "deny", priority = -1 }
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+module_name_repetitions = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+struct_excessive_bools = "allow"
+
+[profile.release]
+codegen-units = 1
+lto = "thin"
+opt-level = "s"
+panic = "abort"
+strip = true

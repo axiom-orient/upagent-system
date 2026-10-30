@@ -1,0 +1,6 @@
+{
+  "id": "reviewer/neutral",
+  "version": "1",
+  "description": "Balanced reconstruction of requirements, implementation evidence, and uncertainty.",
+  "profiles": ["reviewer"]
+}

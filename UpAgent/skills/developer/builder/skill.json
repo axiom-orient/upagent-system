@@ -1,0 +1,1 @@
+{"id":"developer/builder","version":"1.0.0","description":"Contract-driven implementation of complete product behavior","profiles":["developer"],"requiredCapabilities":["repo/read","repo/write","process/run","git/read"]}

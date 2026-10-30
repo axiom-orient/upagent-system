@@ -1,0 +1,34 @@
+[package]
+name = "agent-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "agent"
+path = "src/main.rs"
+
+[dependencies]
+agent-contract = { version = "0.1.0", path = "../../../../promptGen/crates/agent-contract", features = ["schema"] }
+agent-core = { path = "../agent-core" }
+agent-memory = { path = "../agent-memory" }
+agent-profile-api = { path = "../agent-profile-api" }
+agent-profiles = { path = "../agent-profiles" }
+agent-provider = { path = "../agent-provider" }
+agent-provider-api = { path = "../agent-provider-api" }
+agent-runtime = { path = "../agent-runtime" }
+agent-skills = { path = "../agent-skills" }
+clap.workspace = true
+directories.workspace = true
+schemars.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+
+[dev-dependencies]
+sha2.workspace = true
+tempfile.workspace = true
+
+[lints]
+workspace = true

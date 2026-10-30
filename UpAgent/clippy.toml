@@ -1,0 +1,11 @@
+# Production code keeps unwrap/expect/panic denied by workspace lints.
+# Tests may use them as assertion helpers; `cargo clippy --all-targets`
+# otherwise contradicts the repository's own verification command.
+allow-unwrap-in-tests = true
+allow-expect-in-tests = true
+allow-panic-in-tests = true
+
+# Function length is a review signal, not an automatic split boundary. This
+# 340-line ceiling prevents accidental giant functions while allowing cohesive
+# protocol encoders and reducers to remain intact.
+too-many-lines-threshold = 340

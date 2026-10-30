@@ -1,0 +1,39 @@
+{
+  "$id": "https://axd.local/schemas/intake-request.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "acceptance_criteria": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "allowed_source_scope": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "constraints": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "context": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "request_id": {
+      "type": "string"
+    }
+  },
+  "title": "AXDev Intake Request",
+  "type": "object"
+}

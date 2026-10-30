@@ -1,0 +1,23 @@
+[package]
+name = "agent-effects"
+description = "Semantic agent tools backed by the RAX effect authority"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[dependencies]
+agent-core = { path = "../agent-core" }
+rax-core = { path = "../rax-core" }
+rax-runtime = { path = "../rax-runtime" }
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[lints]
+workspace = true

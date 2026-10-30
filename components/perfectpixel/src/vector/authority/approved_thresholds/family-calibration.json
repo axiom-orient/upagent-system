@@ -1,0 +1,542 @@
+{
+  "bundles": [
+    {
+      "bundleDigest": "sha256-eae5ed44b34cc7de739be902d368d1093f8dcdc42f4fc529609b6e65a9a1a147",
+      "digestClosure": {
+        "adaptivePolicy": null,
+        "backend": {
+          "id": "logical-grid-pixel-art",
+          "sourceDigest": "sha256-be6e42563e6aa18679f614d776a0b6495fab62a6612a5dc4143e9fbc9990bce3",
+          "version": "1"
+        },
+        "bootstrap": {
+          "evaluationSha256": "0e992b7539bb024748e8cea08a6e03057363213e6f7f7d72af007a9433371b7f",
+          "resultMatrixDigest": "sha256-990017593c131ca71be64482b3b9a549726dc1ed9574e3cb8653e6d94bd7b705",
+          "reviewSha256": "11fd67ae9f33b6443a469af32f5f66bceb7ee87eb5a815d43483f5b46da74ca6",
+          "runDigest": "sha256-21f248bf577c78e495a2acd1a206038085b0326661b7b51429dac91b795354df"
+        },
+        "calibrationSplitSha256": "339a26f204be65e639b31c86f07ecc33703b496d243ed5e16a574b88ab6a40b3",
+        "calibrationVerifier": {
+          "calibrationVerifierSourceSha256": "4571c35905e1a4cd3a6abd6ba0ce1c1b8c86e3f5a37db921c800dabfe04d5e69",
+          "cargoLockSha256": "8162ecaa6c7add67ce0387cec6c672a262e4e8fc9da34c961496a228f59e353a"
+        },
+        "corpusDefectSha256": "b07ec892522bf628d2bcc81f32298483cf81bfc4732f053aa37eeb4cfc96369b",
+        "corpusGeneratorSourceSha256": "596df64bc7ae2675b65c23e620c415382b39e2c08ddb5a5b8a42f0aa63b38265",
+        "corpusLicenseInventorySha256": "2ae178ce6a90decf0f64aa7418ac18e9b7c24af3f5c2cd4192ba841a529a26be",
+        "corpusLockIdentitySha256": "1230c1a4ff8810de86004401c234ae89b838ec25c32175de258db5fbd70326de",
+        "corpusManifestSha256": "938e4b64563cd1d498423dc034d8579678a2efbe9e876c5e9cff2c8c76951f07",
+        "corpusSchemaSha256": "969bf0d6ff979d56625673c179edbfbfad87841afa44341721851192b61ccb02",
+        "corpusSourceFamilySha256": "bfef63bbc78b5a53acde855b636875436c793c464a847fd4cc39804637bcbebd",
+        "corpusUniqueArtifactInventorySha256": "09d3f84a8b72e73d6a776a832ce5673b6c685678b9931aad5ff98faa74b05513",
+        "defectInventory": [
+          {
+            "ancestry": "synthetic-ancestry://pixel-art/1",
+            "defect": "palette-infeasibility",
+            "expectedRejection": {
+              "category": "palette",
+              "code": "PROTECTED_GATE_FAILED"
+            },
+            "expectedSupport": "reject",
+            "id": "defect-palette-infeasibility",
+            "inputSha256": "e4503c076c32ee29ff09f405eeec939750594e88bc1c93e1c632d5c80057818c",
+            "sourceFamily": "pixel-art",
+            "split": "calibration"
+          },
+          {
+            "ancestry": "synthetic-ancestry://pixel-art/2",
+            "defect": "gradient-banding",
+            "expectedRejection": {
+              "category": "rendering",
+              "code": "PROTECTED_GATE_FAILED"
+            },
+            "expectedSupport": "reject",
+            "id": "defect-gradient-banding",
+            "inputSha256": "deaf9136a887b9a81ad5dad8a784620a249ecd2ed4722757739765017677b3ff",
+            "sourceFamily": "pixel-art",
+            "split": "calibration"
+          }
+        ],
+        "effectiveThresholds": {
+          "maximumInputPixels": 16777216,
+          "maximumPaths": 64,
+          "maximumSvgBytes": 1048576,
+          "minimumLocalLumaSsim": 0.99,
+          "minimumQualityScore": 0.995,
+          "minimumWorstBlockLumaSsim": 0.95
+        },
+        "family": "pixel-art",
+        "fixedGates": {
+          "enforceResourceLimits": true,
+          "preserveProtectedFeatures": true,
+          "rejectUnsupportedContent": true,
+          "requireSecurityGate": true
+        },
+        "holdoutIdentitySha256": "98d6eeb35bbbb0aa1e1a708f0e12359f7063ed3763d63cc6078ae58d19b73b8b",
+        "holdoutSplitSha256": "5a9653698924887032d0908d6e8fa677f53a517fe76d26720bf85c2826e7df3e",
+        "noWaivers": true,
+        "reportSchema": "perfectpixel.vector-evaluation/3",
+        "sourceInventory": [
+          {
+            "ancestry": "synthetic-ancestry://pixel-art/1",
+            "expectedSupport": "supported",
+            "id": "pixel-art-1",
+            "inputSha256": "3eccfac509bdba55a2bf33e6cb087858dc4101d4523710ca0f6f12ae7d7ceaa8",
+            "sourceFamily": "pixel-art",
+            "split": "calibration"
+          },
+          {
+            "ancestry": "synthetic-ancestry://pixel-art/2",
+            "expectedSupport": "supported",
+            "id": "pixel-art-2",
+            "inputSha256": "65401255e429dc94ee8f1f3fd5e6d8c0db56e0640f1d8b9b053b80097e991985",
+            "sourceFamily": "pixel-art",
+            "split": "calibration"
+          },
+          {
+            "ancestry": "synthetic-ancestry://pixel-art/3",
+            "expectedSupport": "supported",
+            "id": "pixel-art-3",
+            "inputSha256": "dfe805103e489aa150809abfcd77119a51431a4f19c0b5c99c5d58f7d2adde1e",
+            "sourceFamily": "pixel-art",
+            "split": "holdout"
+          },
+          {
+            "ancestry": "synthetic-ancestry://pixel-art/4",
+            "expectedSupport": "supported",
+            "id": "pixel-art-4",
+            "inputSha256": "d0b945d61a47cd2d152f03ec33a805a9dcc46c8f9717f5084bbbe1e840ad1edf",
+            "sourceFamily": "pixel-art",
+            "split": "holdout"
+          }
+        ]
+      },
+      "kind": "family-calibration-bundle",
+      "noWaivers": true,
+      "schemaVersion": 2,
+      "thresholdsChanged": false
+    },
+    {
+      "bundleDigest": "sha256-5c1be5f8610367a2f07927627b99be2c10418b87d60dccc2888b87dab9465fff",
+      "digestClosure": {
+        "adaptivePolicy": null,
+        "backend": {
+          "id": "bounded-flat-regions",
+          "sourceDigest": "sha256-3039c1914f153ddbdcdb6def0259448a3434edc2999046e8313623e16f490ab8",
+          "version": "1"
+        },
+        "bootstrap": {
+          "evaluationSha256": "0e992b7539bb024748e8cea08a6e03057363213e6f7f7d72af007a9433371b7f",
+          "resultMatrixDigest": "sha256-990017593c131ca71be64482b3b9a549726dc1ed9574e3cb8653e6d94bd7b705",
+          "reviewSha256": "11fd67ae9f33b6443a469af32f5f66bceb7ee87eb5a815d43483f5b46da74ca6",
+          "runDigest": "sha256-21f248bf577c78e495a2acd1a206038085b0326661b7b51429dac91b795354df"
+        },
+        "calibrationSplitSha256": "339a26f204be65e639b31c86f07ecc33703b496d243ed5e16a574b88ab6a40b3",
+        "calibrationVerifier": {
+          "calibrationVerifierSourceSha256": "4571c35905e1a4cd3a6abd6ba0ce1c1b8c86e3f5a37db921c800dabfe04d5e69",
+          "cargoLockSha256": "8162ecaa6c7add67ce0387cec6c672a262e4e8fc9da34c961496a228f59e353a"
+        },
+        "corpusDefectSha256": "b07ec892522bf628d2bcc81f32298483cf81bfc4732f053aa37eeb4cfc96369b",
+        "corpusGeneratorSourceSha256": "596df64bc7ae2675b65c23e620c415382b39e2c08ddb5a5b8a42f0aa63b38265",
+        "corpusLicenseInventorySha256": "2ae178ce6a90decf0f64aa7418ac18e9b7c24af3f5c2cd4192ba841a529a26be",
+        "corpusLockIdentitySha256": "1230c1a4ff8810de86004401c234ae89b838ec25c32175de258db5fbd70326de",
+        "corpusManifestSha256": "938e4b64563cd1d498423dc034d8579678a2efbe9e876c5e9cff2c8c76951f07",
+        "corpusSchemaSha256": "969bf0d6ff979d56625673c179edbfbfad87841afa44341721851192b61ccb02",
+        "corpusSourceFamilySha256": "bfef63bbc78b5a53acde855b636875436c793c464a847fd4cc39804637bcbebd",
+        "corpusUniqueArtifactInventorySha256": "09d3f84a8b72e73d6a776a832ce5673b6c685678b9931aad5ff98faa74b05513",
+        "defectInventory": [
+          {
+            "ancestry": "synthetic-ancestry://flat-icon/1",
+            "defect": "edge-movement",
+            "expectedRejection": {
+              "category": "geometry-fidelity",
+              "code": "PROTECTED_GATE_FAILED"
+            },
+            "expectedSupport": "reject",
+            "id": "defect-edge-movement",
+            "inputSha256": "dfa5334babcfb6c2ad857d5b7b7881ee5b432a4c72d368fc6a90a25258dab962",
+            "sourceFamily": "flat-icon",
+            "split": "calibration"
+          },
+          {
+            "ancestry": "synthetic-ancestry://flat-icon/2",
+            "defect": "endpoint-deletion",
+            "expectedRejection": {
+              "category": "topology",
+              "code": "PROTECTED_GATE_FAILED"
+            },
+            "expectedSupport": "reject",
+            "id": "defect-endpoint-deletion",
+            "inputSha256": "11b3bcbe3f82af6c8cb3dd06e93c4a3492510db9371371b9e0cf9c70571e4da8",
+            "sourceFamily": "flat-icon",
+            "split": "calibration"
+          }
+        ],
+        "effectiveThresholds": {
+          "maximumInputPixels": 16777216,
+          "maximumPaths": 64,
+          "maximumSvgBytes": 1048576,
+          "minimumLocalLumaSsim": 0.99,
+          "minimumQualityScore": 0.995,
+          "minimumWorstBlockLumaSsim": 0.95
+        },
+        "family": "flat-icon",
+        "fixedGates": {
+          "enforceResourceLimits": true,
+          "preserveProtectedFeatures": true,
+          "rejectUnsupportedContent": true,
+          "requireSecurityGate": true
+        },
+        "holdoutIdentitySha256": "98d6eeb35bbbb0aa1e1a708f0e12359f7063ed3763d63cc6078ae58d19b73b8b",
+        "holdoutSplitSha256": "5a9653698924887032d0908d6e8fa677f53a517fe76d26720bf85c2826e7df3e",
+        "noWaivers": true,
+        "reportSchema": "perfectpixel.vector-evaluation/3",
+        "sourceInventory": [
+          {
+            "ancestry": "synthetic-ancestry://flat-icon/1",
+            "expectedSupport": "supported",
+            "id": "flat-icon-1",
+            "inputSha256": "0489ee0e055e1a69e5f3d4c657dafc3333785a3a4633a6bf6f55d1171eda29b6",
+            "sourceFamily": "flat-icon",
+            "split": "calibration"
+          },
+          {
+            "ancestry": "synthetic-ancestry://flat-icon/2",
+            "expectedSupport": "supported",
+            "id": "flat-icon-2",
+            "inputSha256": "9b2d8552011e52e52ce06abc0915c3d08992d17852b73048b7b476f8f1a56680",
+            "sourceFamily": "flat-icon",
+            "split": "calibration"
+          },
+          {
+            "ancestry": "synthetic-ancestry://flat-icon/3",
+            "expectedSupport": "supported",
+            "id": "flat-icon-3",
+            "inputSha256": "02fbadc37f5f8ce47d8c343aa0c843b1b6cc9b63d017ae14453cae14a218ea51",
+            "sourceFamily": "flat-icon",
+            "split": "holdout"
+          },
+          {
+            "ancestry": "synthetic-ancestry://flat-icon/4",
+            "expectedSupport": "supported",
+            "id": "flat-icon-4",
+            "inputSha256": "a79e56302034abf4264d70f7ad8dfacef0ed99dfe48bcdc8b845b31f22752090",
+            "sourceFamily": "flat-icon",
+            "split": "holdout"
+          }
+        ]
+      },
+      "kind": "family-calibration-bundle",
+      "noWaivers": true,
+      "schemaVersion": 2,
+      "thresholdsChanged": false
+    },
+    {
+      "bundleDigest": "sha256-307e1d8cf45723444444d94afb9614a709e822979c54c4dd19d09c4584452134",
+      "digestClosure": {
+        "adaptivePolicy": null,
+        "backend": {
+          "id": "polarity-network-line-art",
+          "sourceDigest": "sha256-b9c8e56f65e0a7e6a646376d6def0a68b7527c80c77bae9ca1dd7408f5edbd51",
+          "version": "1"
+        },
+        "bootstrap": {
+          "evaluationSha256": "0e992b7539bb024748e8cea08a6e03057363213e6f7f7d72af007a9433371b7f",
+          "resultMatrixDigest": "sha256-990017593c131ca71be64482b3b9a549726dc1ed9574e3cb8653e6d94bd7b705",
+          "reviewSha256": "11fd67ae9f33b6443a469af32f5f66bceb7ee87eb5a815d43483f5b46da74ca6",
+          "runDigest": "sha256-21f248bf577c78e495a2acd1a206038085b0326661b7b51429dac91b795354df"
+        },
+        "calibrationSplitSha256": "339a26f204be65e639b31c86f07ecc33703b496d243ed5e16a574b88ab6a40b3",
+        "calibrationVerifier": {
+          "calibrationVerifierSourceSha256": "4571c35905e1a4cd3a6abd6ba0ce1c1b8c86e3f5a37db921c800dabfe04d5e69",
+          "cargoLockSha256": "8162ecaa6c7add67ce0387cec6c672a262e4e8fc9da34c961496a228f59e353a"
+        },
+        "corpusDefectSha256": "b07ec892522bf628d2bcc81f32298483cf81bfc4732f053aa37eeb4cfc96369b",
+        "corpusGeneratorSourceSha256": "596df64bc7ae2675b65c23e620c415382b39e2c08ddb5a5b8a42f0aa63b38265",
+        "corpusLicenseInventorySha256": "2ae178ce6a90decf0f64aa7418ac18e9b7c24af3f5c2cd4192ba841a529a26be",
+        "corpusLockIdentitySha256": "1230c1a4ff8810de86004401c234ae89b838ec25c32175de258db5fbd70326de",
+        "corpusManifestSha256": "938e4b64563cd1d498423dc034d8579678a2efbe9e876c5e9cff2c8c76951f07",
+        "corpusSchemaSha256": "969bf0d6ff979d56625673c179edbfbfad87841afa44341721851192b61ccb02",
+        "corpusSourceFamilySha256": "bfef63bbc78b5a53acde855b636875436c793c464a847fd4cc39804637bcbebd",
+        "corpusUniqueArtifactInventorySha256": "09d3f84a8b72e73d6a776a832ce5673b6c685678b9931aad5ff98faa74b05513",
+        "defectInventory": [
+          {
+            "ancestry": "synthetic-ancestry://line-art/1",
+            "defect": "junction-deletion",
+            "expectedRejection": {
+              "category": "topology",
+              "code": "PROTECTED_GATE_FAILED"
+            },
+            "expectedSupport": "reject",
+            "id": "defect-junction-deletion",
+            "inputSha256": "2b3616cd1343484e04dd4058b3f33e634bf8a53da722b4d33aef799a5f057709",
+            "sourceFamily": "line-art",
+            "split": "calibration"
+          },
+          {
+            "ancestry": "synthetic-ancestry://line-art/2",
+            "defect": "polarity-background",
+            "expectedRejection": {
+              "category": "polarity",
+              "code": "PROTECTED_GATE_FAILED"
+            },
+            "expectedSupport": "reject",
+            "id": "defect-polarity-background",
+            "inputSha256": "11bed70b06235c0484b00829d6607b4653a5a73d2068b54d708aa1369150979f",
+            "sourceFamily": "line-art",
+            "split": "calibration"
+          }
+        ],
+        "effectiveThresholds": {
+          "maximumInputPixels": 16777216,
+          "maximumPaths": 64,
+          "maximumSvgBytes": 1048576,
+          "minimumLocalLumaSsim": 0.99,
+          "minimumQualityScore": 0.995,
+          "minimumWorstBlockLumaSsim": 0.95
+        },
+        "family": "line-art",
+        "fixedGates": {
+          "enforceResourceLimits": true,
+          "preserveProtectedFeatures": true,
+          "rejectUnsupportedContent": true,
+          "requireSecurityGate": true
+        },
+        "holdoutIdentitySha256": "98d6eeb35bbbb0aa1e1a708f0e12359f7063ed3763d63cc6078ae58d19b73b8b",
+        "holdoutSplitSha256": "5a9653698924887032d0908d6e8fa677f53a517fe76d26720bf85c2826e7df3e",
+        "noWaivers": true,
+        "reportSchema": "perfectpixel.vector-evaluation/3",
+        "sourceInventory": [
+          {
+            "ancestry": "synthetic-ancestry://line-art/1",
+            "expectedSupport": "supported",
+            "id": "line-art-1",
+            "inputSha256": "43c732c2c5f7c920766e9b73ac796424837497a02affa7f36fce96fec2042a66",
+            "sourceFamily": "line-art",
+            "split": "calibration"
+          },
+          {
+            "ancestry": "synthetic-ancestry://line-art/2",
+            "expectedSupport": "supported",
+            "id": "line-art-2",
+            "inputSha256": "6646c690580360b0187364070a5fbe9a62e59474a9144f861de9a690c3efffde",
+            "sourceFamily": "line-art",
+            "split": "calibration"
+          },
+          {
+            "ancestry": "synthetic-ancestry://line-art/3",
+            "expectedSupport": "supported",
+            "id": "line-art-3",
+            "inputSha256": "82b900b4823c7ed84b3d054a8702fd3d8d75ef7ad06d1076c490c610bd5d4699",
+            "sourceFamily": "line-art",
+            "split": "holdout"
+          },
+          {
+            "ancestry": "synthetic-ancestry://line-art/4",
+            "expectedSupport": "supported",
+            "id": "line-art-4",
+            "inputSha256": "ab22f296bb861f2cb8980517440be37b0be24a197bf0035887ae8088be223b9e",
+            "sourceFamily": "line-art",
+            "split": "holdout"
+          }
+        ]
+      },
+      "kind": "family-calibration-bundle",
+      "noWaivers": true,
+      "schemaVersion": 2,
+      "thresholdsChanged": false
+    },
+    {
+      "bundleDigest": "sha256-84014fd1787a2d5b45d182fc779ed169a10359926ba6b7763b917f0dad731d7b",
+      "digestClosure": {
+        "adaptivePolicy": {
+          "fragmentPixels": 4,
+          "maximumAdjacencyEdges": 16384,
+          "maximumCostQ": 100000,
+          "maximumEmittedPaths": 32768,
+          "maximumFineRegions": 4096,
+          "maximumMergeEvaluations": 262144,
+          "maximumQueueEntries": 65536,
+          "maximumRetainedSnapshots": 2,
+          "maximumSourceColors": 1024,
+          "minimumPlateauCoveragePercent": 60,
+          "modelIdentity": "stable-solid-rgba/2",
+          "policyIdentity": "adaptive-fragment-merge/2",
+          "protectedThinPixels": 5,
+          "selectorIdentity": "minimum-score-with-merge-credit/1",
+          "selectorMergeCreditQ": 1000,
+          "traceEncodingVersion": 1,
+          "traceIdentity": "perfectpixel.adaptive-trace/1"
+        },
+        "backend": {
+          "id": "stable-solid-illustration",
+          "sourceDigest": "sha256-135b12c0693d40361f3158e221d509e565aaba8fa9d420fa02d1d61c36f50f45",
+          "version": "2"
+        },
+        "bootstrap": {
+          "evaluationSha256": "0e992b7539bb024748e8cea08a6e03057363213e6f7f7d72af007a9433371b7f",
+          "resultMatrixDigest": "sha256-990017593c131ca71be64482b3b9a549726dc1ed9574e3cb8653e6d94bd7b705",
+          "reviewSha256": "11fd67ae9f33b6443a469af32f5f66bceb7ee87eb5a815d43483f5b46da74ca6",
+          "runDigest": "sha256-21f248bf577c78e495a2acd1a206038085b0326661b7b51429dac91b795354df"
+        },
+        "calibrationSplitSha256": "339a26f204be65e639b31c86f07ecc33703b496d243ed5e16a574b88ab6a40b3",
+        "calibrationVerifier": {
+          "calibrationVerifierSourceSha256": "4571c35905e1a4cd3a6abd6ba0ce1c1b8c86e3f5a37db921c800dabfe04d5e69",
+          "cargoLockSha256": "8162ecaa6c7add67ce0387cec6c672a262e4e8fc9da34c961496a228f59e353a"
+        },
+        "corpusDefectSha256": "b07ec892522bf628d2bcc81f32298483cf81bfc4732f053aa37eeb4cfc96369b",
+        "corpusGeneratorSourceSha256": "596df64bc7ae2675b65c23e620c415382b39e2c08ddb5a5b8a42f0aa63b38265",
+        "corpusLicenseInventorySha256": "2ae178ce6a90decf0f64aa7418ac18e9b7c24af3f5c2cd4192ba841a529a26be",
+        "corpusLockIdentitySha256": "1230c1a4ff8810de86004401c234ae89b838ec25c32175de258db5fbd70326de",
+        "corpusManifestSha256": "938e4b64563cd1d498423dc034d8579678a2efbe9e876c5e9cff2c8c76951f07",
+        "corpusSchemaSha256": "969bf0d6ff979d56625673c179edbfbfad87841afa44341721851192b61ccb02",
+        "corpusSourceFamilySha256": "bfef63bbc78b5a53acde855b636875436c793c464a847fd4cc39804637bcbebd",
+        "corpusUniqueArtifactInventorySha256": "09d3f84a8b72e73d6a776a832ce5673b6c685678b9931aad5ff98faa74b05513",
+        "defectInventory": [
+          {
+            "ancestry": "synthetic-ancestry://color-illustration/1",
+            "defect": "alpha-halo",
+            "expectedRejection": {
+              "category": "alpha-integrity",
+              "code": "PROTECTED_GATE_FAILED"
+            },
+            "expectedSupport": "reject",
+            "id": "defect-alpha-halo",
+            "inputSha256": "83c8dbf07450a2b02b243b74465a808531fe1efaa943599b8ab91290dc44d606",
+            "sourceFamily": "color-illustration",
+            "split": "calibration"
+          },
+          {
+            "ancestry": "synthetic-ancestry://color-illustration/2",
+            "defect": "components",
+            "expectedRejection": {
+              "category": "topology",
+              "code": "PROTECTED_GATE_FAILED"
+            },
+            "expectedSupport": "reject",
+            "id": "defect-components",
+            "inputSha256": "d6c53673147f90c2e561dd0b77d5b50ebb5a2342df067800518e3dce93153798",
+            "sourceFamily": "color-illustration",
+            "split": "calibration"
+          },
+          {
+            "ancestry": "synthetic-ancestry://transparent-illustration/1",
+            "defect": "mixed-rendered-geometry",
+            "expectedRejection": {
+              "category": "content-classification",
+              "code": "PROTECTED_GATE_FAILED"
+            },
+            "expectedSupport": "reject",
+            "id": "defect-mixed-rendered-geometry",
+            "inputSha256": "27b72a9b8c1092fc3849a456d2bc798b50902b8e5b334a6cf44befc4dc9c3f95",
+            "sourceFamily": "transparent-illustration",
+            "split": "calibration"
+          },
+          {
+            "ancestry": "synthetic-ancestry://transparent-illustration/2",
+            "defect": "unstable-ids",
+            "expectedRejection": {
+              "category": "determinism",
+              "code": "PROTECTED_GATE_FAILED"
+            },
+            "expectedSupport": "reject",
+            "id": "defect-unstable-ids",
+            "inputSha256": "d52d1bc520a9afff6764d4d98d6b0e13bec9ec8e460ec1c41e99cf6b7370d899",
+            "sourceFamily": "transparent-illustration",
+            "split": "calibration"
+          }
+        ],
+        "effectiveThresholds": {
+          "maximumInputPixels": 16777216,
+          "maximumPaths": 64,
+          "maximumSvgBytes": 1048576,
+          "minimumLocalLumaSsim": 0.99,
+          "minimumQualityScore": 0.995,
+          "minimumWorstBlockLumaSsim": 0.95
+        },
+        "family": "bounded-illustration",
+        "fixedGates": {
+          "enforceResourceLimits": true,
+          "preserveProtectedFeatures": true,
+          "rejectUnsupportedContent": true,
+          "requireSecurityGate": true
+        },
+        "holdoutIdentitySha256": "98d6eeb35bbbb0aa1e1a708f0e12359f7063ed3763d63cc6078ae58d19b73b8b",
+        "holdoutSplitSha256": "5a9653698924887032d0908d6e8fa677f53a517fe76d26720bf85c2826e7df3e",
+        "noWaivers": true,
+        "reportSchema": "perfectpixel.vector-evaluation/3",
+        "sourceInventory": [
+          {
+            "ancestry": "synthetic-ancestry://color-illustration/1",
+            "expectedSupport": "conditional",
+            "id": "color-illustration-1",
+            "inputSha256": "00adb826ba16d64ba6598544f222f60a8ccfb32e74abbf377b7c313db3ff3fe7",
+            "sourceFamily": "color-illustration",
+            "split": "calibration"
+          },
+          {
+            "ancestry": "synthetic-ancestry://color-illustration/2",
+            "expectedSupport": "conditional",
+            "id": "color-illustration-2",
+            "inputSha256": "4b4c7e560b5a39edb68f1f5a074cf23ec7e7f3bc23c91336a2f2ae818276387a",
+            "sourceFamily": "color-illustration",
+            "split": "calibration"
+          },
+          {
+            "ancestry": "synthetic-ancestry://color-illustration/3",
+            "expectedSupport": "conditional",
+            "id": "color-illustration-3",
+            "inputSha256": "558bb96058a1a7d2ddc09d7114205746b18e4ab84de3ff94646032d79fdc7c0a",
+            "sourceFamily": "color-illustration",
+            "split": "holdout"
+          },
+          {
+            "ancestry": "synthetic-ancestry://color-illustration/4",
+            "expectedSupport": "conditional",
+            "id": "color-illustration-4",
+            "inputSha256": "b97797b797fca92672994f60714cbecd3725a9415806597bfb8c14e9243de78a",
+            "sourceFamily": "color-illustration",
+            "split": "holdout"
+          },
+          {
+            "ancestry": "synthetic-ancestry://transparent-illustration/1",
+            "expectedSupport": "conditional",
+            "id": "transparent-illustration-1",
+            "inputSha256": "ff15890adefbcab1fc9e3578d758c61fff7f382a48967edfee079587581f3fc8",
+            "sourceFamily": "transparent-illustration",
+            "split": "calibration"
+          },
+          {
+            "ancestry": "synthetic-ancestry://transparent-illustration/2",
+            "expectedSupport": "conditional",
+            "id": "transparent-illustration-2",
+            "inputSha256": "1eebc5f56f2ce6df033769dd0890785df3d3870de970e85c8256035cecd02f7a",
+            "sourceFamily": "transparent-illustration",
+            "split": "calibration"
+          },
+          {
+            "ancestry": "synthetic-ancestry://transparent-illustration/3",
+            "expectedSupport": "conditional",
+            "id": "transparent-illustration-3",
+            "inputSha256": "d204bed0748947ebc314cf873adee7656e6485b049458d5bbe9d8bdc7ceb262e",
+            "sourceFamily": "transparent-illustration",
+            "split": "holdout"
+          },
+          {
+            "ancestry": "synthetic-ancestry://transparent-illustration/4",
+            "expectedSupport": "conditional",
+            "id": "transparent-illustration-4",
+            "inputSha256": "52194a3274033aeb4342fcfee8c3ed445fc5c8bdcbf2930a59a17359327b7772",
+            "sourceFamily": "transparent-illustration",
+            "split": "holdout"
+          }
+        ]
+      },
+      "kind": "family-calibration-bundle",
+      "noWaivers": true,
+      "schemaVersion": 2,
+      "thresholdsChanged": false
+    }
+  ],
+  "registryDigest": "sha256-52d45f9afc17428c051670f6602db05adafc0fc7d9d0bccd936dfc3ca068379e",
+  "registryId": "family-calibration/2"
+}

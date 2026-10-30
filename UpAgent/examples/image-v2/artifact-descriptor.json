@@ -1,0 +1,15 @@
+{
+  "protocolVersion": "2.0.0",
+  "artifact": {
+    "id": "art-example",
+    "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "mediaType": "image/png",
+    "byteLength": 2048,
+    "relativePath": "bb/example.png"
+  },
+  "kind": "working_raster",
+  "pixelSpec": {"format": "rgba8", "colorSpace": "srgb", "alphaMode": "straight"},
+  "dependencies": [],
+  "dependencyClosureSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "retention": "task_scoped"
+}

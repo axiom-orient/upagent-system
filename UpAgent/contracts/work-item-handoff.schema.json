@@ -1,0 +1,23 @@
+{
+  "$id": "https://axd.local/schemas/work-item-handoff.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "approval": {
+      "type": "object"
+    },
+    "handoff": {
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "axdev.work-item.v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "handoff",
+    "approval"
+  ],
+  "title": "AXDev Approved Work Item Handoff",
+  "type": "object"
+}

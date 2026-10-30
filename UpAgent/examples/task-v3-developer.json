@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 3,
+  "taskId": "task-v3-developer-example",
+  "sessionId": "session-v3-developer-example",
+  "objective": "Inspect the repository and propose a minimal prototype slice.",
+  "workspace": "/tmp",
+  "context": {},
+  "approvals": []
+}

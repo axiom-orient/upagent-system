@@ -1,0 +1,106 @@
+{
+  "schema": "upagent.components-lock/1",
+  "generatedDate": "2026-10-30",
+  "authority": "This file is the single source of truth for embedded component identity and provenance.",
+  "components": {
+    "upagent": {
+      "path": "UpAgent",
+      "localTreeSha256": "43d026063a2a598f0353dfe2c06b23a695fb05e0c82777f47b739b4857f0f21b",
+      "fileCount": 199,
+      "byteCount": 2519888,
+      "role": "agent-state-authority",
+      "origin": {
+        "kind": "embedded-canonical-source",
+        "sourcePackage": "upagent-perfectpixel-source-2026-09-13.tar(1).gz",
+        "sourcePackageSha256": "d84e265a958c85f1cf910121443374ba1def7fec7913fef587d17de5346430ce"
+      }
+    },
+    "perfectpixel": {
+      "path": "components/perfectpixel",
+      "localTreeSha256": "c3d880f13486989abb9400f7dfebd6eabfcde398bb9a4d1d8f6c691c447142ef",
+      "fileCount": 180,
+      "byteCount": 1986151,
+      "role": "deterministic-image-mechanism",
+      "protocol": {
+        "schema": "perfectpixel.agent-image/2",
+        "protocolVersion": "2.0.0",
+        "behaviorVersion": "2.0.0"
+      },
+      "origin": {
+        "kind": "donor-plus-contract-reconciliation",
+        "donorPackage": "upagent(5).zip",
+        "donorPackageSha256": "c3d88710958562bb9f34935909cc9045e54f7886b61cfe0f0370eb7e133a62dd",
+        "upstreamReference": {
+          "repository": "https://github.com/AxiomOrient/perfectpixel.git",
+          "commit": "6126f94035206b64ee04fe06afb75cd6836861d2"
+        },
+        "reconciledSurfaces": [
+          "render.text_node",
+          "compare.exact_spec",
+          "agent-render raster operations",
+          "typed text render evidence"
+        ]
+      }
+    },
+    "vergerail": {
+      "path": "components/vergerail",
+      "localTreeSha256": "daecfe1e70a8ed720a67533ee3d43f6a339ca90f9b993f5e4dc2a364a7a09010",
+      "fileCount": 68,
+      "byteCount": 1729188,
+      "role": "model-and-image-provider-effect",
+      "protocol": {
+        "schema": "vergerail.upagent/2",
+        "operations": [
+          "model_turn",
+          "image_generate"
+        ]
+      },
+      "origin": {
+        "kind": "embedded-donor-source",
+        "donorPackage": "upagent(5).zip",
+        "donorPackageSha256": "c3d88710958562bb9f34935909cc9045e54f7886b61cfe0f0370eb7e133a62dd",
+        "upstreamReference": {
+          "repository": "https://github.com/axiom-orient/vergerail.git",
+          "commit": "e608481e05d2c9c75a7275b7147bc82d15cd295e"
+        },
+        "cargoLockSha256": "56bc4b502be5a29d79520fa42d4a67d4bad87bd2e40aaae63aaeb926987b5369"
+      }
+    },
+    "promptGen": {
+      "path": "../promptGen",
+      "localTreeSha256": "e61d21ca8b0ce10be8411969d4434c29de4eb0e579e7f89685da23a2aacd0473",
+      "fileCount": 188,
+      "byteCount": 17493895,
+      "version": "5.0.0",
+      "revision": "promptgen-5.0.0-20261003.2",
+      "role": "canonical-external-prompt-compiler-and-semantic-edit-source",
+      "origin": {
+        "kind": "pinned-local-working-tree",
+        "repository": "https://github.com/axiom-orient/promptGen.git",
+        "commit": "995fb74268022ee3e1e900ba3d38e96311e7cc3e",
+        "sourceTreeSha256": "e61d21ca8b0ce10be8411969d4434c29de4eb0e579e7f89685da23a2aacd0473"
+      },
+      "sharedContract": {
+        "crate": "agent-contract",
+        "version": "0.1.0",
+        "manifest": "crates/agent-contract/Cargo.toml",
+        "catalog": "agent.shared-contract/1",
+        "defaultFeatures": [],
+        "sourceAuthority": "same pinned PromptGen base Git commit and verified local source tree"
+      },
+      "integrationPolicy": {
+        "upagentConsumes": [
+          "agent-contract pure Rust types, validation and schemas",
+          "image --mode prompt-only",
+          "image --mode codex-imagegen with one base reference and one candidate"
+        ],
+        "standaloneOnly": [
+          "web",
+          "mcp",
+          "screen"
+        ],
+        "effectAuthority": "Vergerail owns image_generate; PromptGen Codex owns only explicitly approved semantic edit."
+      }
+    }
+  }
+}

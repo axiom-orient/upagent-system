@@ -1,0 +1,1 @@
+{"id":"developer/prototyper","version":"1.0.0","description":"Fast, measurable implementation for resolving product uncertainty","profiles":["developer"],"requiredCapabilities":["repo/read","repo/write","process/run","git/read"]}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://upagent.local/schemas/image-operation-receipt-v2.schema.json",
+  "title": "UpAgent image operation receipt v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "requestId", "operation", "status", "behaviorVersion", "implementationVersion", "requestSha256", "dependencyClosureSha256", "dependencies", "determinism"],
+  "properties": {
+    "schema": {"enum": ["upagent.image-operation-receipt/2", "perfectpixel.agent-image/receipt/2"]},
+    "requestId": {"type": "string", "minLength": 1, "maxLength": 192},
+    "operation": {"type": "string", "minLength": 1, "maxLength": 64},
+    "status": {"enum": ["committed", "rejected"]},
+    "behaviorVersion": {"const": "2.0.0"},
+    "implementationVersion": {"type": "string", "minLength": 1, "maxLength": 64},
+    "requestSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependencyClosureSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependencies": {"type": "array", "maxItems": 64, "items": {"$ref": "image-artifact-descriptor-v2.schema.json#/$defs/dependency"}},
+    "outputSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "determinism": {"enum": ["bit_exact", "backend_deterministic", "inference_observed"]}
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "id": "reviewer/critical",
+  "version": "1",
+  "description": "Correctness, failure-path, recovery, and regression-focused review.",
+  "profiles": ["reviewer"]
+}
